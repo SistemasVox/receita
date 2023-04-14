@@ -48,7 +48,7 @@ def update_nome_cnpj(cnpj, nome):
         )
         cursor = db.cursor()
         query = "UPDATE empresas SET nome = %s WHERE cnpj = %s"
-        values = (nome, cnpj)
+        values = (nome = re.sub(r'[\'"]+','', nome), cnpj)
         cursor.execute(query, values)
         db.commit()
         db.close()

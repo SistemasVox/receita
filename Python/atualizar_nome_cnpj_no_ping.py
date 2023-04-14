@@ -81,6 +81,7 @@ def update_nome_cnpj(cnpj, nome):
         # Verifica se o nome tem mais de 1 caracter.
         if len(nome) > 1:
             # Remove espaços em branco extras e substitui sequências de espaços por um único espaço.
+            nome = re.sub(r'[\'"]+','', nome)
             nome = re.sub(r'\s+', ' ', nome).strip()
             
             # Cria uma string de consulta SQL para atualizar o nome da empresa com o CNPJ fornecido.
