@@ -22,6 +22,8 @@ SELECT REPLACE(FORMAT(COUNT(*), 0), ',', '.') as nome_vazio FROM empresas WHERE 
 SELECT CONCAT(cnpj, ordem_cnpj, dv_cnpj) as cnpj_completo FROM empresas;
 -- Seleciona o CNPJ formatado concatenando as substrings do CNPJ original e adicionando os caracteres especiais de formatação (/ e -).
 SELECT CONCAT(SUBSTR(cnpj, 1, 2), '.', SUBSTR(cnpj, 3, 3), '.', SUBSTR(cnpj, 6, 3), '', SUBSTR(cnpj, 9, 4), '/', ordem_cnpj, '-', dv_cnpj) AS cnpj_formatado FROM empresas LIMIT 10;
+--  obter a quantidade de CEPs sem repetição 
+SELECT COUNT(DISTINCT cep) AS qtd_ceps FROM empresas;
 
 
 -- -------------------------------------------------------------------------------------------------------------------------------------------

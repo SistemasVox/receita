@@ -8,6 +8,8 @@ sudo timedatectl set-timezone America/Sao_Paulo
 sudo timedatectl
 
 # Listar as portas em uso pelo sistema
+sudo yum install net-tools
+sudo dnf install -y net-tools wget vim bmon nethogs nano git screen selinux-utils curl open-vm-tools speedtest-cli
 sudo netstat -tulpn
 
 # Acessar o diretório de configuração do grub
